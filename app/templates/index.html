@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>WELCOME</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('data') }}">About me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <img src="../static/images/KAME.jpeg" alt="sea_turtle" />
+    <h2>Hobbies:</h2>
+    <ul>
+      {% if flag == 'True' %}
+        {% for hobbie in hobbies %}
+          <li>{{ hobbie }}</li>
+      {% else %}
+        <li>watching squirrels</li>
+        <li>traveling</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </main>
+{% endblock %}
