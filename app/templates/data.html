@@ -2,30 +2,31 @@
 
 {% block content %}
   <header>
-
-  {% if name == '' %}
-    <h1>Hello!</h1>
-  {% else %}
-    <h1>{{ name }}</h1>
-  {% endif %}
-
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="col-md-12 bottom-padding-sm">
+        {% if name == '' %}
+          <h1>Hello!</h1>
+        {% else %}
+          <h1>{{ name }}</h1>
+        {% endif %}
+      </div> <!--ends col-md-12 for header-->
+    </div> <!--ends row for header-->
   </header>
 
   <main>
-    <h2>About Me</h2>
-    <img src="../static/images/SUP.JPG" alt="SUP" />
+    <div class="row">
+      <div class="col-md-12 top-margin-sm">
+        <h2>About Me</h2>
+        <img src="../static/images/SUP.JPG" alt="SUP" />
 
-    <h3>Description:</h3>
-    {% if description == '' %}
-      <p>I am learning Python. I have studied HTML, CSS and JavaScript by myself.</p>
-    {% else %}
-      <p>{{ description }}</p>
-    {% endif %}
+        <h3 class="top-margin-sm"> Description:</h3>
+        {% if description == '' %}
+          <p>I am learning Python. I have studied HTML, CSS and JavaScript by myself.</p>
+        {% else %}
+          <p>{{ description }}</p>
+        {% endif %}
+      </div> <!--ends col-md-12 for main-->
+    </div> <!--ends row for main-->
   </main>
 
 {% endblock %}

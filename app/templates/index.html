@@ -2,26 +2,29 @@
 
 {% block content %}
   <header>
-    <h1>WELCOME</h1>
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('data') }}">About me</a></li>
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="col-md-12 bottom-padding-sm">
+        <h1>WELCOME</h1>
+      </div> <!--ends col-md-12 for header-->
+    </div> <!--ends row for header-->
   </header>
 
   <main>
-    <img src="../static/images/KAME.jpeg" alt="sea_turtle" />
-    <h2>Hobbies:</h2>
-    <ul>
-      {% if flag == 'True' %}
-        {% for hobbie in hobbies %}
-          <li>{{ hobbie }}</li>
-      {% else %}
-        <li>watching squirrels</li>
-        <li>traveling</li>
-        {% endfor %}
-      {% endif %}
-    </ul>
+    <div class="row">
+      <div class="col-md-12 top-margin-sm">
+        <img src="../static/images/KAME.jpeg" alt="sea_turtle" />
+        <h2 class="top-margin-sm">Hobbies:</h2>
+        <ul>
+          {% if flag == 'True' %}
+            {% for hobbie in hobbies %}
+              <li>{{ hobbie }}</li>
+          {% else %}
+            <li>watching squirrels</li>
+            <li>traveling</li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div> <!--ends col-md-12 for main-->
+    </div> <!--ends row for main-->
   </main>
 {% endblock %}
